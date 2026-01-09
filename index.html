@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiche de sécurité Supbiotech</title>
-  <link rel="stylesheet" href="style1.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta charset="UTF-8">
+    <title>Gestion des Fiches de Sécurité</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-  <header class="header">
     <div class="container">
-      <h1 class="logo">Fiche de sécurité Supbiotech</h1>
+        <h1>Fiches de Sécurité Supbiotech</h1>
+
+        <input type="text" id="searchBar" placeholder="Rechercher un produit (ou synonyme : ex: alcool, danger...)">
+        
+        <ul id="pdfList">
+            <li>Chargement des fiches...</li>
+        </ul>
+
+        <hr>
+
+        <div class="upload-section">
+            <h3>Ajouter un nouveau PDF</h3>
+            <input type="text" id="fileTitle" placeholder="Nom du produit">
+            <input type="file" id="fileInput" accept=".pdf">
+            <input type="password" id="ghToken" placeholder="Votre Token GitHub">
+            <button onclick="uploadPDF()">Uploader sur le site</button>
+            <p id="uploadStatus"></p>
+        </div>
     </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h2>Banque de fiches de sécurité</h2>
-      <input type="search" id="searchBar" placeholder="Rechercher une fiche..." class="search-input" style="width:100%; max-width:400px; margin-top:20px;">
-    </div>
-  </section>
-
-  <section class="pdf-container">
-    <ul id="pdfList" class="pdf-list">
-      <li>Chargement des documents...</li>
-    </ul>
-  </section>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
