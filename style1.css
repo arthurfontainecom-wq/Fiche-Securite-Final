@@ -1,0 +1,206 @@
+/* =========================
+   VARIABLES STYLE "SPOTIFY LIGHT"
+========================= */
+:root {
+    --bg-main: #f8f9fa;
+    --bg-card: #ffffff;
+    --spotify-green: #1ed760;
+    --text-main: #121212;
+    --text-muted: #6a6a6a;
+    --border-soft: #efefef;
+    --radius-lg: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Circular Std', 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    background-color: var(--bg-card);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--spotify-green);
+}
+
+/* =========================
+   HERO (TITRE RECENTRÉ)
+========================= */
+.hero {
+    padding: 4rem 1rem 2rem;
+    text-align: center; /* Centre le texte */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les blocs h2 et p */
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* =========================
+   PDF CONTAINER & SECTIONS
+========================= */
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 95%;
+    max-width: 1400px;
+    margin: 2rem auto 4rem;
+}
+
+.pdf-section {
+    flex: 1 1 400px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    /* Animation remise ici */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* L'effet qui fait bouger le container au survol */
+.pdf-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--spotify-green);
+    padding-left: 12px;
+}
+
+/* =========================
+   BARRE DE RECHERCHE
+========================= */
+.search-input {
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s;
+    margin-bottom: 2rem;
+}
+
+.search-input:focus {
+    background-color: #ffffff;
+    border-color: var(--spotify-green);
+    box-shadow: 0 0 0 4px rgba(30, 215, 96, 0.1);
+}
+
+/* =========================
+   LISTE DE PDF
+========================= */
+.pdf-list {
+    list-style: none;
+}
+
+.pdf-list li {
+    margin-bottom: 0.5rem;
+}
+
+.pdf-list a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.pdf-list a:hover {
+    background-color: #f6f6f6;
+    color: var(--spotify-green);
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 850px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .pdf-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .pdf-section {
+        width: 100%;
+        flex: none;
+        padding: 1.5rem;
+    }
+    
+    /* On réduit un peu l'effet hover sur mobile pour éviter les bugs tactiles */
+    .pdf-section:hover {
+        transform: translateY(-4px);
+    }
+}
