@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  repo: arthurfontainecom-wq/Fiche-de-securite-Supbiotech
+  branch: main
+
+media_folder: "fiches"
+public_folder: "/fiches"
+
+collections:
+  - name: "fiches"
+    label: "Toutes les Fiches"
+    folder: "fiches"
+    create: true
+    fields:
+      - { label: "Nom du produit", name: "title", widget: "string" }
+      - { label: "Fichier PDF", name: "file", widget: "file" }
