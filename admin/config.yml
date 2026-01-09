@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: arthurfontainecom-wq/Fiche-de-securite-Supbiotech
+  repo: arthurfontainecom-wq/Fiche-Securite-Final
   branch: main
 
 media_folder: "fiches"
