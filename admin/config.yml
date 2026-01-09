@@ -7,10 +7,11 @@ media_folder: "fiches"
 public_folder: "/fiches"
 
 collections:
-  - name: "fiches"
-    label: "Toutes les Fiches"
-    folder: "fiches"
-    create: true
-    fields:
-      - { label: "Nom du produit", name: "title", widget: "string" }
-      - { label: "Fichier PDF", name: "file", widget: "file" }
+  - name: "fiches_upload"
+    label: "Ajouter un PDF"
+    files:
+      - label: "Nouveau PDF"
+        name: "upload"
+        file: "fiches/.keep" # Astuce pour uploader dans le dossier sans créer de .md
+        fields:
+          - { label: "Sélectionner le PDF", name: "pdf_file", widget: "file", media_library: { allow_multiple: false } }
